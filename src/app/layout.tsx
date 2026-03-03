@@ -5,9 +5,9 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "OC Concrete Driveway | Top Concrete Contractor Orange County",
-  description: "Top-rated concrete driveway contractor in Orange County and Riverside. We specialize in driveway installation, replacement, stamped concrete, and patio slabs. Get a free quote today!",
-  keywords: "concrete driveway installation Orange County, concrete driveway replacement Orange County, concrete driveway repair Orange County, concrete contractor Orange County, local concrete driveway contractor Orange County",
+  title: "OC Concrete Driveway | Top Concrete Contractor Orange County & Riverside",
+  description: "Top-rated concrete driveway contractor in Orange County and Riverside. We specialize in driveway installation, emergency concrete repair, replacement, stamped concrete, and patio slabs. Get a free estimate today!",
+  keywords: "concrete driveway contractors Orange County, affordable concrete driveway replacement Orange County, emergency concrete repair Riverside, concrete driveway installation cost, hire concrete contractor near me, best concrete driveway replacement",
 };
 
 export default function RootLayout({
