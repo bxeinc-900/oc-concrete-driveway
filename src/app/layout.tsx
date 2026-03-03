@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "OC Concrete Driveway | Top Concrete Contractor Orange County & Riverside",
-  description: "Top-rated concrete driveway contractor in Orange County and Riverside. We specialize in driveway installation, emergency concrete repair, replacement, stamped concrete, and patio slabs. Get a free estimate today!",
-  keywords: "concrete driveway contractors Orange County, affordable concrete driveway replacement Orange County, emergency concrete repair Riverside, concrete driveway installation cost, hire concrete contractor near me, best concrete driveway replacement",
+  description: "Durable and beautiful concrete driveways, patios, and pavers in Orange County and Riverside. Licensed and bonded with over 20 years of experience.",
 };
 
 export default function RootLayout({
@@ -18,7 +19,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} antialiased`}>
-        {children}
+        <Navbar />
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );

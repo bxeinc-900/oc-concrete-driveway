@@ -1,230 +1,232 @@
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col font-sans bg-slate-50 text-slate-900">
-      {/* Header / Nav */}
-      <header className="fixed w-full bg-white/90 backdrop-blur-sm z-50 border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
-            <div className="flex-shrink-0 flex items-center gap-2">
-              <span className="font-bold text-2xl tracking-tighter text-blue-700">OC Concrete Driveway</span>
+    <div className="flex flex-col min-h-screen">
+      {/* Hero Section */}
+      <section className="relative h-[85vh] flex items-center overflow-hidden">
+        <Image
+          src="/hero_driveway_1772576798204.png"
+          alt="Modern Concrete Driveway Orange County"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 to-transparent" />
+        <div className="section-container relative z-10">
+          <div className="max-w-2xl text-white space-y-8 px-4">
+            <div className="inline-block bg-primary px-4 py-1 rounded-full text-sm font-bold tracking-widest uppercase shadow-lg">
+              #1 Concrete Contractor in OC & Riverside
             </div>
-            <nav className="hidden md:flex space-x-8">
-              <Link href="#services" className="text-slate-600 hover:text-blue-600 transition font-medium">Services</Link>
-              <Link href="#about" className="text-slate-600 hover:text-blue-600 transition font-medium">About</Link>
-              <Link href="#areas" className="text-slate-600 hover:text-blue-600 transition font-medium">Areas We Serve</Link>
-              <Link href="tel:9097872400" className="text-slate-600 hover:text-blue-600 transition font-medium">Contact</Link>
-            </nav>
-            <div className="hidden md:flex items-center">
-              <Link href="tel:9097872400" className="bg-blue-600 text-white px-6 py-2.5 rounded-full font-semibold hover:bg-blue-700 transition shadow-lg shadow-blue-600/20">
-                (909) 787-2400
+            <h1 className="text-5xl md:text-7xl font-black leading-tight text-white drop-shadow-2xl">
+              BUILDING <span className="text-primary italic">DURABLE</span> <br />
+              BEAUTY FOR YOUR HOME
+            </h1>
+            <p className="text-xl text-slate-300 max-w-lg leading-relaxed drop-shadow-md">
+              Expert concrete driveway installation, stamped concrete designs, and professional masonry. Transform your curb appeal with 20+ years of local expertise.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+              <Link href="/contact" className="btn-primary text-center">
+                Request Free Estimate
+              </Link>
+              <Link href="/portfolio" className="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white font-semibold py-3 px-6 rounded-lg transition-all text-center border border-white/30">
+                View Our Work
               </Link>
             </div>
           </div>
         </div>
-      </header>
 
-      {/* Hero Section */}
-      <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-slate-900">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/40 to-slate-900/90 z-10" />
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1584622781864-b3338bf3bbf5?q=80&w=2670&auto=format&fit=crop')] bg-cover bg-center" />
-        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
-          <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-6">
-            Top-Rated Concrete Driveway Contractors in <br className="hidden md:block" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">Orange County</span>
-          </h1>
-          <p className="mt-4 text-xl md:text-2xl text-slate-200 max-w-3xl mx-auto mb-10 leading-relaxed">
-            From new concrete driveway installation to full replacement and repairs, we provide premium quality concrete services across Orange County and Riverside.
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Link href="tel:9097872400" className="bg-blue-600 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-blue-700 transition shadow-xl shadow-blue-600/30 transform hover:-translate-y-1">
-              Get a Free Quote
-            </Link>
-            <Link href="#services" className="bg-white/10 backdrop-blur text-white border border-white/20 px-8 py-4 rounded-full font-bold text-lg hover:bg-white/20 transition transform hover:-translate-y-1">
-              Explore Services
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Trust Badges */}
-      <section className="py-8 bg-white border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap justify-center gap-8 md:gap-16 items-center text-slate-500 font-semibold text-sm uppercase tracking-wider">
-            <div className="flex items-center gap-2">
-              <svg className="w-6 h-6 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-              Licensed & Bonded
+        {/* Floating Trust Badge */}
+        <div className="absolute bottom-8 right-8 hidden md:block">
+          <div className="bg-white p-6 rounded-2xl shadow-2xl border border-slate-100 flex items-center space-x-4 animate-bounce-slow">
+            <div className="bg-green-100 p-3 rounded-full">
+              <svg className="w-8 h-8 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
             </div>
-            <div className="flex items-center gap-2">
-              <svg className="w-6 h-6 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-              20+ Years Experience
-            </div>
-            <div className="flex items-center gap-2">
-              <svg className="w-6 h-6 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-              Free Estimates
-            </div>
-            <div className="flex items-center gap-2">
-              <svg className="w-6 h-6 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-              Satisfaction Guaranteed
+            <div>
+              <p className="font-black text-2xl text-slate-900 leading-none">4.9/5</p>
+              <p className="text-slate-500 text-sm font-semibold">Google Rating</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Services Section */}
-      <section id="services" className="py-24 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">Expert Concrete Services</h2>
+      {/* Services Highlights */}
+      <section className="py-24 bg-slate-50">
+        <div className="section-container px-4">
+          <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+            <h2 className="text-4xl font-black text-slate-900 uppercase tracking-tight">PREMIUM CONCRETE SERVICES</h2>
+            <div className="h-1.5 w-24 bg-primary mx-auto rounded-full" />
             <p className="text-lg text-slate-600">
-              As local concrete driveway contractors in Orange County, we design and install premium driveways, patios, and walkways for homeowners and businesses.
+              From classic gray driveways to custom decorative patterns, we deliver craftsmanship that lasts a lifetime.
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Service 1 */}
-            <div className="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 hover:shadow-xl transition-shadow group">
-              <div className="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors">
-                <svg className="w-8 h-8 text-blue-600 group-hover:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                </svg>
+            <div className="group bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100">
+              <div className="w-16 h-16 bg-primary/10 text-primary flex items-center justify-center rounded-2xl mb-8 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
               </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">Concrete Driveway Installation</h3>
-              <p className="text-slate-600 leading-relaxed">
-                Transform your home's curb appeal with a durable, long-lasting concrete driveway. Affordable concrete driveway installation in Orange County tailored to your property.
+              <h3 className="text-2xl font-black mb-4 group-hover:text-primary transition-colors uppercase tracking-tight">DRIVEWAYS</h3>
+              <p className="text-slate-600 leading-relaxed mb-6">
+                Standard and custom driveway replacement with reinforced foundations for heavy use.
               </p>
+              <Link href="/services" className="text-primary font-bold flex items-center space-x-2 group-hover:translate-x-2 transition-transform">
+                <span>Learn More</span>
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke="currentColor" strokeWidth="3" /></svg>
+              </Link>
             </div>
+
             {/* Service 2 */}
-            <div className="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 hover:shadow-xl transition-shadow group">
-              <div className="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors">
-                <svg className="w-8 h-8 text-blue-600 group-hover:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-                </svg>
+            <div className="group bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100">
+              <div className="w-16 h-16 bg-primary/10 text-primary flex items-center justify-center rounded-2xl mb-8 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" /></svg>
               </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">Concrete Repair & Replacement</h3>
-              <p className="text-slate-600 leading-relaxed">
-                Say goodbye to cracked, dangerous driveways. We specialize in residential concrete driveway repair and full replacement to restore safety and beauty.
+              <h3 className="text-2xl font-black mb-4 group-hover:text-primary transition-colors uppercase tracking-tight">STAMPED CONCRETE</h3>
+              <p className="text-slate-600 leading-relaxed mb-6">
+                Mimic the look of natural stone, slate, or brick with our beautiful stamped finishes.
               </p>
+              <Link href="/services" className="text-primary font-bold flex items-center space-x-2 group-hover:translate-x-2 transition-transform">
+                <span>Explore Patterns</span>
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke="currentColor" strokeWidth="3" /></svg>
+              </Link>
             </div>
+
             {/* Service 3 */}
-            <div className="bg-white rounded-2xl p-8 shadow-sm border border-slate-100 hover:shadow-xl transition-shadow group">
-              <div className="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors">
-                <svg className="w-8 h-8 text-blue-600 group-hover:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
-                </svg>
+            <div className="group bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100">
+              <div className="w-16 h-16 bg-primary/10 text-primary flex items-center justify-center rounded-2xl mb-8 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>
               </div>
-              <h3 className="text-xl font-bold text-slate-900 mb-3">Decorative & Stamped Concrete</h3>
-              <p className="text-slate-600 leading-relaxed">
-                Upgrade to a premium look with stamped concrete patios, pavers, and walkways. We offer competitive stamped concrete driveway costs in Orange County.
+              <h3 className="text-2xl font-black mb-4 group-hover:text-primary transition-colors uppercase tracking-tight">BLOCK WALLS</h3>
+              <p className="text-slate-600 leading-relaxed mb-6">
+                Structural and ornamental block walls, retaining walls, and custom masonry projects.
               </p>
+              <Link href="/services" className="text-primary font-bold flex items-center space-x-2 group-hover:translate-x-2 transition-transform">
+                <span>See Masonry</span>
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke="currentColor" strokeWidth="3" /></svg>
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Content Section / SEO Optimized Text */}
-      <section id="about" className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="text-4xl font-extrabold text-slate-900 mb-6 tracking-tight">Why Replace Your Broken Concrete Driveway?</h2>
-              <div className="space-y-6 text-lg text-slate-600 leading-relaxed">
-                <p>
-                  Old, cracked concrete driveways can be a major headache. Not only are they unsightly, but they can also be dangerous, leading to trips and falls. When it comes to <strong>concrete driveway replacement in Orange County</strong>, OC Concrete Driveway & Patio provides reliable, top-tier service.
-                </p>
-                <p>
-                  As a leading <strong>local concrete driveway contractor</strong>, we use the best materials and equipment. From preparing the base to pouring and polishing for a smooth finish, our team ensures your new driveway handles heavy use and lasts for decades.
-                </p>
-                <ul className="space-y-3 font-medium text-slate-800">
-                  <li className="flex items-center gap-3">
-                    <svg className="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>
-                    Boost your property's curb appeal and value.
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <svg className="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>
-                    Eliminate trip hazards and liability risks.
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <svg className="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>
-                    Custom designs: traditional, stamped, or pavers.
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div className="relative">
-              <div className="absolute -inset-4 bg-blue-50 rounded-3xl transform rotate-3" />
-              <img
-                src="https://images.unsplash.com/photo-1590486803833-1c5dc8ddd4c8?q=80&w=2574&auto=format&fit=crop"
-                alt="New Concrete Driveway Installation"
-                className="relative rounded-2xl shadow-xl border border-white"
-              />
-              <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-xl flex gap-4 items-center border border-slate-100">
-                <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xl">
-                  $
+      {/* Why Choose Us */}
+      <section className="py-24">
+        <div className="section-container flex flex-col md:flex-row items-center gap-16 px-4">
+          <div className="flex-1 space-y-8">
+            <h2 className="text-4xl font-black text-slate-900 leading-tight uppercase">
+              WHY ORANGE COUNTY <br />
+              <span className="text-primary tracking-tight">CHOOSES US</span>
+            </h2>
+            <div className="space-y-6">
+              <div className="flex items-start space-x-4">
+                <div className="bg-primary/10 p-2 rounded-lg text-primary mt-1">
+                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>
                 </div>
                 <div>
-                  <p className="text-sm text-slate-500 font-semibold uppercase">Pricing</p>
-                  <p className="font-bold text-slate-900">Affordable Rates</p>
+                  <h4 className="text-lg font-bold text-slate-900">Licensed & Insured</h4>
+                  <p className="text-slate-600">Total peace of mind with fully bonded and insured operations.</p>
                 </div>
               </div>
+              <div className="flex items-start space-x-4">
+                <div className="bg-primary/10 p-2 rounded-lg text-primary mt-1">
+                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>
+                </div>
+                <div>
+                  <h4 className="text-lg font-bold text-slate-900">20+ Years Experience</h4>
+                  <p className="text-slate-600">Established local expertise in Southern California hardscaping.</p>
+                </div>
+              </div>
+              <div className="flex items-start space-x-4">
+                <div className="bg-primary/10 p-2 rounded-lg text-primary mt-1">
+                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>
+                </div>
+                <div>
+                  <h4 className="text-lg font-bold text-slate-900">On-Time Completion</h4>
+                  <p className="text-slate-600">Projects delivered exactly when promised, no excuses.</p>
+                </div>
+              </div>
+            </div>
+            <Link href="/about" className="btn-outline inline-block">
+              Read Our Story
+            </Link>
+          </div>
+          <div className="flex-1 relative">
+            <div className="relative z-10 rounded-[3rem] overflow-hidden shadow-2xl">
+              <Image
+                src="/stamped_concrete_detail_1772576812583.png"
+                alt="Concrete Craftsmanship"
+                width={600}
+                height={500}
+                className="object-cover"
+              />
+            </div>
+            <div className="absolute -top-12 -right-12 w-64 h-64 bg-primary/10 rounded-full blur-3xl -z-10" />
+            <div className="absolute -bottom-12 -left-12 w-64 h-64 bg-blue-100 rounded-full blur-3xl -z-10" />
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonial Section Preview */}
+      <section className="py-24 bg-slate-900 text-white overflow-hidden relative">
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-primary/5 pointer-events-none" />
+        <div className="section-container relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center px-4">
+          <div className="space-y-8">
+            <h2 className="text-4xl font-black text-white leading-tight uppercase tracking-tight">
+              DON'T JUST TAKE <br />
+              OUR WORD FOR IT
+            </h2>
+            <div className="bg-white/10 p-8 rounded-3xl backdrop-blur-md border border-white/20">
+              <p className="text-xl italic text-slate-200 mb-6 leading-relaxed">
+                "OC Concrete replaced our 30-year-old driveway in just 3 days. The finish is beautiful and the team was incredibly professional. Best investment we've made this year!"
+              </p>
+              <div className="flex items-center space-x-4">
+                <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center font-bold text-lg text-white shadow-xl">
+                  JD
+                </div>
+                <div>
+                  <p className="font-bold">John D.</p>
+                  <p className="text-slate-400 text-sm">Yorba Linda Resident</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="relative group rounded-[3rem] overflow-hidden shadow-2xl">
+            <Image
+              src="/concrete_pavers_modern_1772576832304.png"
+              alt="Modern Patio"
+              width={800}
+              height={600}
+              className="object-cover group-hover:scale-110 transition-transform duration-700"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent flex items-end p-8">
+              <span className="text-white font-bold text-lg">Modern interlocking paver patio, 2024 Project</span>
             </div>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section id="areas" className="py-24 bg-blue-600 relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-full overflow-hidden opacity-10">
-          <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="absolute w-full h-full">
-            <polygon fill="white" points="0,100 100,0 100,100" />
-          </svg>
-        </div>
-        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
-          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-6">Ready to Upgrade Your Driveway?</h2>
-          <p className="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
-            We are the top-rated concrete driveway contractors near you. Serving all of Orange County and Riverside with over 20 years of experience.
+      <section className="py-24 bg-primary shadow-inner">
+        <div className="section-container text-center text-white space-y-8 px-4">
+          <h2 className="text-4xl md:text-6xl font-black italic tracking-tighter uppercase drop-shadow-lg">READY FOR A NEW LOOK?</h2>
+          <p className="text-xl text-orange-100 max-w-2xl mx-auto font-medium">
+            Get a fast, professional estimate for your driveway or patio project today.
           </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Link href="tel:9097872400" className="bg-white text-blue-700 px-8 py-4 rounded-full font-bold text-lg hover:bg-slate-50 transition shadow-xl transform hover:-translate-y-1">
-              Call Now: (909) 787-2400
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-6 pt-4">
+            <a href="tel:9097872400" className="bg-slate-900 hover:bg-slate-800 text-white font-black py-5 px-10 rounded-2xl text-xl shadow-2xl transition-all transform hover:-translate-y-1 block w-full sm:w-auto">
+              CALL (909) 787-2400
+            </a>
+            <p className="font-black text-xl text-white/50 hidden sm:block">OR</p>
+            <Link href="/contact" className="bg-white text-primary hover:bg-slate-50 font-black py-5 px-10 rounded-2xl text-xl shadow-2xl transition-all transform hover:-translate-y-1 block w-full sm:w-auto">
+              GET AN ONLINE QUOTE
             </Link>
           </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-8">
-          <div>
-            <span className="font-bold text-2xl tracking-tighter text-white mb-4 block">OC Concrete Driveway</span>
-            <p className="text-sm leading-relaxed mb-4">
-              Your best choice for concrete driveway contractors. Specializing in new installations, replacements, and patios across Orange County and Riverside, CA.
-            </p>
-          </div>
-          <div>
-            <h4 className="text-white font-semibold mb-4">Services</h4>
-            <ul className="space-y-2 text-sm">
-              <li>Concrete Driveway Installation</li>
-              <li>Concrete Replacement</li>
-              <li>Stamped Concrete</li>
-              <li>Patios & Pavers</li>
-              <li>Block Walls & Masonry</li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="text-white font-semibold mb-4">Contact Info</h4>
-            <ul className="space-y-2 text-sm">
-              <li>Serving Orange County & Riverside</li>
-              <li>Phone: (909) 787-2400</li>
-              <li>Licensed, Bonded, Insured</li>
-            </ul>
-          </div>
-        </div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 pt-8 border-t border-slate-800 text-sm text-center">
-          &copy; {new Date().getFullYear()} OC Concrete Driveway. All rights reserved.
-        </div>
-      </footer>
     </div>
   );
 }
