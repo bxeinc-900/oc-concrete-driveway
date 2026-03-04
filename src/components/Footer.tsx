@@ -53,7 +53,7 @@ const Footer = () => {
                 <div>
                     <h4 className="text-lg font-bold mb-6 text-white leading-none">Service Areas</h4>
                     <ul className="grid grid-cols-2 gap-x-4 gap-y-2 text-slate-400 text-sm">
-                        {['Anaheim', 'Costa Mesa', 'Huntington Beach', 'Laguna Niguel', 'Tustin', 'Yorba Linda', 'Corona', 'Chino Hills'].map((city) => (
+                        {['Anaheim', 'Irvine', 'Costa Mesa', 'Huntington Beach', 'Fullerton', 'Mission Viejo', 'Corona', 'Riverside', 'Temecula', 'Chino Hills'].map((city) => (
                             <li key={city}>
                                 <Link href={`/service-areas/${city.toLowerCase().replace(' ', '-')}`} className="hover:text-primary transition-colors">
                                     {city}

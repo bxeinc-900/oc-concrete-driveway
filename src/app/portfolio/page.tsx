@@ -1,39 +1,53 @@
+import Link from 'next/link';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: "Project Portfolio | Real Concrete Transformations",
+    description: "View our gallery of concrete driveways, stamped patios, and paver installations across Orange County and Riverside.",
+};
+
 export default function PortfolioPage() {
     const projects = [
-        { name: "Modern Estate Driveway", location: "Yorba Linda", img: "/hero_driveway_1772576798204.png", category: "Driveway" },
-        { name: "Rustic Stamped Patio", location: "Anaheim Hills", img: "/stamped_concrete_detail_1772576812583.png", category: "Stamped" },
-        { name: "Designer Paver Walkway", location: "Irvine", img: "/concrete_pavers_modern_1772576832304.png", category: "Pavers" },
-        { name: "Commercial Slab Project", location: "Riverside", img: "/hero_driveway_1772576798204.png", category: "Commercial" },
-        { name: "Slate Textured Pool Deck", location: "Tustin", img: "/stamped_concrete_detail_1772576812583.png", category: "Stamped" },
-        { name: "Interlocking Driveway", location: "Orange", img: "/concrete_pavers_modern_1772576832304.png", category: "Pavers" },
+        { name: "Diamond Pattern Driveway", location: "Yorba Linda", img: "/images/a_large diamond driveway.jpg", category: "Driveway" },
+        { name: "Stamped Border Entry", location: "Costa Mesa", img: "/images/Concrete_driveway-Stamped_With_Borders Costa Mesa.jpg", category: "Stamped" },
+        { name: "Modern Paver System", location: "Laguna Niguel", img: "/images/pavers-driveways-laguna-niguel.jpeg", category: "Pavers" },
+        { name: "Backyard Stamped Oasis", location: "Riverside", img: "/images/backyard stamped concrete patio.jpg", category: "Patio" },
+        { name: "Industrial Slab Install", location: "Chino Hills", img: "/images/concrete driveway in Chino HIlls and Orange County.jpg", category: "Basic Slabs" },
+        { name: "Decorative Front Entry", location: "Tustin", img: "/images/concrete-driveway-Tustin-orange-county.jpg", category: "Stamped" },
+        { name: "Luxury Paver Driveway", location: "Eastside Costa Mesa", img: "/images/Paver-Driveway-Installation-eastside costa mesa.jpg", category: "Pavers" },
+        { name: "Sunburst Stamped Patio", location: "Orange County", img: "/images/stamped-concrete-sunburst-orange-county.jpg", category: "Stamped" },
+        { name: "Clean Driveway Replace", location: "Anaheim", img: "/images/concrete-driveway-replacement-orange-county.jpg", category: "Driveway" },
     ];
 
     return (
-        <div className="bg-white min-h-screen">
-            <section className="bg-slate-900 py-24 text-white">
-                <div className="section-container px-4">
-                    <h1 className="text-5xl md:text-6xl font-black mb-6 uppercase tracking-tight">Our Portfolio</h1>
-                    <p className="text-xl text-slate-400 max-w-2xl">
-                        A showcase of our recent transformations across Orange County and Riverside.
+        <div className="bg-slate-950 min-h-screen text-slate-300">
+            {/* Hero Section */}
+            <section className="relative py-32 overflow-hidden">
+                <div className="absolute inset-0 bg-slate-900/40 backdrop-blur-3xl" />
+                <div className="section-container relative z-10 px-4">
+                    <span className="text-primary font-bold uppercase tracking-[0.3em] text-xs mb-4 block">Proof of Excellence</span>
+                    <h1 className="text-6xl md:text-8xl font-black mb-8 text-white uppercase tracking-tighter italic">Our <span className="text-primary not-italic">Portfolio</span></h1>
+                    <p className="text-xl md:text-2xl text-slate-400 max-w-2xl leading-relaxed font-light">
+                        Explore the high-performance hardscapes we've built for SoCal families. Heritage-grade concrete, engineered for life.
                     </p>
                 </div>
             </section>
 
             <section className="py-24">
                 <div className="section-container px-4">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
                         {projects.map((project, index) => (
-                            <div key={index} className="group relative rounded-3xl overflow-hidden shadow-lg aspect-square">
+                            <div key={index} className="group relative rounded-[3rem] overflow-hidden shadow-2xl aspect-[4/5] border border-white/5 bg-slate-900">
                                 <img
                                     src={project.img}
                                     alt={project.name}
-                                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-1000"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity" />
-                                <div className="absolute bottom-0 left-0 p-8 text-white w-full transform translate-y-4 group-hover:translate-y-0 transition-transform">
-                                    <span className="bg-primary px-3 py-1 rounded-full text-xs font-bold uppercase mb-4 inline-block tracking-widest">{project.category}</span>
-                                    <h3 className="text-2xl font-black uppercase mb-1">{project.name}</h3>
-                                    <p className="text-slate-300 font-semibold">{project.location}, CA</p>
+                                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent opacity-80 group-hover:opacity-40 transition-opacity duration-700" />
+                                <div className="absolute inset-0 p-10 flex flex-col justify-end items-start text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                                    <span className="bg-primary text-white px-4 py-1 rounded-full text-[10px] font-black uppercase mb-4 tracking-[0.2em] shadow-lg">{project.category}</span>
+                                    <h3 className="text-3xl font-black uppercase mb-1 tracking-tighter leading-none italic">{project.name}</h3>
+                                    <p className="text-slate-400 font-bold uppercase text-xs tracking-widest">{project.location}, CA</p>
                                 </div>
                             </div>
                         ))}
@@ -41,11 +55,14 @@ export default function PortfolioPage() {
                 </div>
             </section>
 
-            {/* Trust Quote */}
-            <section className="py-24 bg-slate-50 border-y border-slate-200">
-                <div className="section-container px-4 text-center">
-                    <h2 className="text-3xl font-black text-slate-900 uppercase mb-8">Ready to be our next showcase?</h2>
-                    <a href="/contact" className="btn-primary inline-block">Get Your Free Estimate</a>
+            {/* CTA */}
+            <section className="py-32 bg-slate-900/50 border-t border-white/5">
+                <div className="section-container px-4 text-center space-y-12">
+                    <h2 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tighter leading-none italic">Inspired by our <br /><span className="text-primary not-italic">Recent Work?</span></h2>
+                    <p className="text-xl text-slate-400 max-w-2xl mx-auto font-light leading-relaxed italic">
+                        "Your home is our next masterpiece. Let's build something beautiful together."
+                    </p>
+                    <Link href="/contact" className="btn-primary px-12 py-5 text-xl">Get Your Free Estimate</Link>
                 </div>
             </section>
         </div>

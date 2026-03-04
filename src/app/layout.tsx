@@ -16,8 +16,52 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "HomeAndConstructionBusiness",
+    "name": "OC Concrete Driveway",
+    "alternateName": "OC Concrete Driveway & Patio",
+    "description": "Top-rated concrete driveway contractor in Orange County and Riverside. Specializing in driveway replacement, stamped concrete, and patio installation.",
+    "url": "https://occoncretedriveway.com",
+    "telephone": "+19097872400",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "addressRegion": "CA",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoShape",
+      "region": "California",
+      "address": "Orange County and Riverside"
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ],
+      "opens": "07:00",
+      "closes": "18:00"
+    },
+    "sameAs": [
+      "https://www.facebook.com/occoncretedriveways",
+      "https://www.instagram.com/oc_concretedriveway"
+    ]
+  };
+
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className={`${inter.className} antialiased`}>
         <Navbar />
         <main>{children}</main>

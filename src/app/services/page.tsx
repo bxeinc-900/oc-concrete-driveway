@@ -1,68 +1,88 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: "Expert Concrete Services | Driveways, Patios, and Stamped Concrete",
+    description: "Discover our range of concrete services in Orange County and Riverside, including driveway replacement, decorative stamped concrete, and architectural pavers.",
+};
 
 const services = [
     {
         title: "Concrete Driveways",
         description: "Our signature service. We provide full-service driveway replacement, including demolition, excavation, grading, and pouring of high-strength concrete tailored for heavy vehicles.",
         features: ["Steel-Reinforced Foundations", "Multiple Finish Options", "Rapid Completion Time"],
-        image: "/hero_driveway_1772576798204.png"
+        image: "/images/Concrete-Driveway-orange-county-concrete-huntington beach.jpg"
     },
     {
         title: "Stamped Concrete",
         description: "Transform plain concrete into a work of art. We offer dozens of patterns and colors that mimic natural stone, European slate, cobblestone, or brick at a fraction of the cost.",
         features: ["UV-Resistant Coloring", "Slate & Stone Textures", "Custom Border Designs"],
-        image: "/stamped_concrete_detail_1772576812583.png"
+        image: "/images/stamped-concrete-decorative-concrete.jpeg"
     },
     {
-        title: "Paver Installation",
+        title: "Modern Pavers",
         description: "Interlocking concrete pavers offer unparalleled durability and aesthetic flexibility. Perfect for patios, pathways, and designer driveways that need to withstand movement.",
         features: ["Permeable Solutions", "Lifetime Structural Integrity", "Designer Pattern Layouts"],
-        image: "/concrete_pavers_modern_1772576832304.png"
+        image: "/images/DRIVEWAY_PAVERS-decorative concrete driveway.jpg"
+    },
+    {
+        title: "Block Walls & Masonry",
+        description: "High-quality concrete block walls and retaining walls that will last a lifetime for both residential and commercial clients. Expertly engineered for SoCal soil.",
+        features: ["Retaining Wall Experts", "Custom Masonry Work", "Structural Foundations"],
+        image: "/images/bobcat breaking concrete orange county ca.jpg"
     }
 ];
 
 export default function ServicesPage() {
     return (
-        <div className="bg-white">
+        <div className="bg-slate-950 text-slate-300 min-h-screen">
             {/* Header */}
-            <section className="bg-slate-900 py-24 text-white">
-                <div className="section-container px-4">
-                    <h1 className="text-5xl md:text-6xl font-black mb-6 uppercase tracking-tight">Our Services</h1>
-                    <p className="text-xl text-slate-400 max-w-2xl leading-relaxed">
-                        From heavy-duty industrial foundations to decorative residential patios, OC Concrete Driveway delivers precision and quality.
+            <section className="relative py-32 overflow-hidden">
+                <div className="absolute inset-0 bg-slate-900/40 backdrop-blur-3xl" />
+                <div className="section-container relative z-10 px-4">
+                    <span className="text-primary font-bold uppercase tracking-[0.3em] text-xs mb-4 block text-center md:text-left">Precision Engineering</span>
+                    <h1 className="text-6xl md:text-8xl font-black mb-8 text-white uppercase tracking-tighter italic text-center md:text-left">Our <span className="text-primary not-italic">Services</span></h1>
+                    <p className="text-xl md:text-2xl text-slate-400 max-w-2xl leading-relaxed font-light text-center md:text-left mx-auto md:mx-0">
+                        From heavy-duty industrial foundations to decorative residential patios, we deliver precision in every pour.
                     </p>
                 </div>
             </section>
 
             {/* Service List */}
             <section className="py-24">
-                <div className="section-container px-4 space-y-24">
+                <div className="section-container px-4 space-y-32">
                     {services.map((service, index) => (
-                        <div key={index} className={`flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} gap-12 items-center`}>
-                            <div className="flex-1 relative aspect-video w-full rounded-[2rem] overflow-hidden shadow-2xl">
+                        <div key={index} className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-20 items-center`}>
+                            <div className="flex-1 relative aspect-video w-full rounded-[3rem] overflow-hidden shadow-2xl border border-white/5 group">
                                 <Image
                                     src={service.image}
                                     alt={service.title}
                                     fill
-                                    className="object-cover"
+                                    className="object-cover group-hover:scale-110 transition-transform duration-1000"
                                 />
+                                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 to-transparent" />
                             </div>
-                            <div className="flex-1 space-y-6">
-                                <h2 className="text-3xl md:text-4xl font-black text-slate-900 uppercase">{service.title}</h2>
-                                <p className="text-lg text-slate-600 leading-relaxed">
+                            <div className="flex-1 space-y-8">
+                                <h2 className="text-4xl md:text-5xl font-black text-white uppercase tracking-tight italic">{service.title}</h2>
+                                <p className="text-xl text-slate-400 leading-relaxed font-light">
                                     {service.description}
                                 </p>
                                 <ul className="grid grid-cols-1 gap-4">
                                     {service.features.map((feature, i) => (
-                                        <li key={i} className="flex items-center space-x-3 text-slate-900 font-bold">
-                                            <svg className="w-5 h-5 text-primary" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" /></svg>
+                                        <li key={i} className="flex items-center space-x-4 text-white font-bold uppercase tracking-tighter">
+                                            <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" /></svg>
+                                            </div>
                                             <span>{feature}</span>
                                         </li>
                                     ))}
                                 </ul>
-                                <div className="pt-4">
-                                    <Link href="/contact" className="btn-primary inline-block">Request Quote for {service.title}</Link>
+                                <div className="pt-6">
+                                    <Link href="/contact" className="btn-primary inline-flex items-center space-x-3">
+                                        <span>Request Quote</span>
+                                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M14 5l7 7-7 7" /></svg>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -70,20 +90,15 @@ export default function ServicesPage() {
                 </div>
             </section>
 
-            {/* FAQ Simple */}
-            <section className="py-24 bg-slate-50">
-                <div className="section-container px-4">
-                    <h2 className="text-3xl font-black text-center mb-16 uppercase">Service FAQ</h2>
-                    <div className="max-w-3xl mx-auto space-y-8">
-                        <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
-                            <h4 className="text-xl font-bold text-slate-900 mb-2 underline decoration-primary decoration-4">How long does a new driveway take?</h4>
-                            <p className="text-slate-600">Most residential driveways take 3-5 days from demolition to the final finish. You can usually drive on it after 7 days.</p>
-                        </div>
-                        <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
-                            <h4 className="text-xl font-bold text-slate-900 mb-2 underline decoration-primary decoration-4">Do you offer warranties?</h4>
-                            <p className="text-slate-600">Yes, we provide a 2-year structural warranty on all new concrete installations to cover any major cracking or settling issues.</p>
-                        </div>
-                    </div>
+            {/* CTA */}
+            <section className="py-32 bg-slate-900/50">
+                <div className="section-container px-4 text-center space-y-12">
+                    <h2 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tighter leading-none italic">Need a custom <br /><span className="text-primary not-italic">Concrete Solution?</span></h2>
+                    <p className="text-xl text-slate-400 max-w-2xl mx-auto font-light leading-relaxed">
+                        We handle everything from garage slabs to pool decks.
+                        Give us a call to discuss your specific project needs.
+                    </p>
+                    <Link href="/contact" className="btn-primary">Schedule Your Free Estimate</Link>
                 </div>
             </section>
         </div>

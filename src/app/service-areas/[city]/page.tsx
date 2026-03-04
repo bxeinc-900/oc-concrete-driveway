@@ -3,6 +3,7 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 const cityMap: { [key: string]: string } = {
+    // Orange County
     'costa-mesa': 'Costa Mesa',
     'anaheim': 'Anaheim',
     'huntington-beach': 'Huntington Beach',
@@ -10,8 +11,23 @@ const cityMap: { [key: string]: string } = {
     'villa-park': 'Villa Park',
     'tustin': 'Tustin',
     'yorba-linda': 'Yorba Linda',
+    'irvine': 'Irvine',
+    'newport-beach': 'Newport Beach',
+    'mission-viejo': 'Mission Viejo',
+    'fullerton': 'Fullerton',
+    'garden-grove': 'Garden Grove',
+    'orange': 'Orange',
+
+    // Riverside County & IE
+    'corona': 'Corona',
+    'riverside': 'Riverside',
     'chino-hills': 'Chino Hills',
-    'corona': 'Corona'
+    'moreno-valley': 'Moreno Valley',
+    'murrieta': 'Murrieta',
+    'temecula': 'Temecula',
+    'jurupa-valley': 'Jurupa Valley',
+    'eastvale': 'Eastvale',
+    'norco': 'Norco'
 };
 
 interface Props {
@@ -50,44 +66,44 @@ export default async function CityPage({ params }: Props) {
     }
 
     return (
-        <div className="flex flex-col items-center min-h-screen">
+        <div className="flex flex-col items-center min-h-screen bg-slate-950 text-slate-300">
             {/* Hero Section */}
-            <section className="w-full bg-slate-900 text-white py-20 px-6 text-center">
-                <div className="section-container">
-                    <span className="text-primary font-bold uppercase tracking-widest text-sm mb-4 block">
-                        Expert Concrete Services in {cityName}
+            <section className="w-full bg-slate-900/50 border-b border-slate-800 py-32 px-6 text-center relative overflow-hidden">
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent opacity-50" />
+                <div className="section-container relative z-10">
+                    <span className="text-primary font-bold uppercase tracking-[0.3em] text-xs mb-6 block animate-fade-in">
+                        Premier Concrete Contractor in {cityName}
                     </span>
-                    <h1 className="text-4xl md:text-6xl font-black mb-6 leading-tight">
-                        Top-Rated Concrete Driveway <br /> Contractor in {cityName}
+                    <h1 className="text-5xl md:text-8xl font-black mb-8 leading-tight text-white uppercase tracking-tighter italic">
+                        Building Excellence <br /> In <span className="text-primary not-italic">{cityName}</span>
                     </h1>
-                    <p className="max-w-3xl mx-auto text-lg text-slate-300 mb-10 leading-relaxed">
-                        Enhance your {cityName} home with a durable, premium concrete driveway.
-                        From custom stamped patterns to professional replacement, we deliver
-                        excellence with over 20 years of local experience.
+                    <p className="max-w-2xl mx-auto text-xl md:text-2xl text-slate-400 mb-12 leading-relaxed font-light">
+                        Elevate your property with {cityName}'s leading concrete specialists.
+                        Engineering durable, beautiful hardscapes with 30+ years of local mastery.
                     </p>
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <Link href="/contact" className="btn-primary">
-                            Get Your Free ${cityName} Quote
+                    <div className="flex flex-col sm:flex-row gap-8 justify-center items-center">
+                        <Link href="/contact" className="btn-primary shadow-[0_0_40px_rgba(251,146,60,0.2)] text-xl py-5 px-10">
+                            Get Your Free {cityName} Quote
                         </Link>
-                        <Link href="tel:9097872400" className="btn-outline border-white text-white hover:bg-white hover:text-slate-900">
-                            Call (909) 787-2400
+                        <Link href="tel:9097872400" className="text-3xl font-black text-white hover:text-primary transition-colors tracking-widest italic">
+                            (909) 787-2400
                         </Link>
                     </div>
                 </div>
             </section>
 
             {/* Main Content */}
-            <section className="section-container py-24 px-6 md:px-0">
-                <div className="grid md:grid-cols-2 gap-16 items-center">
-                    <div>
-                        <h2 className="text-3xl font-bold mb-6">Why Choose Us for Your {cityName} Project?</h2>
-                        <p className="text-slate-600 mb-6 leading-relaxed">
+            <section className="section-container py-32 px-6 md:px-0">
+                <div className="grid lg:grid-cols-2 gap-24 items-center">
+                    <div className="space-y-12">
+                        <h2 className="text-4xl md:text-6xl font-black text-white uppercase leading-tight italic">Why {cityName} <br /><span className="text-primary not-italic">Chooses Us</span></h2>
+                        <p className="text-slate-400 text-xl leading-relaxed font-light">
                             When it comes to concrete work in {cityName}, experience and quality matter.
                             Our team understands the local soil conditions and environmental factors that affect
                             concrete longevity in Southern California. We don't just pour concrete;
-                            we build foundations that last.
+                            we build foundations that last for generations.
                         </p>
-                        <ul className="space-y-4">
+                        <div className="grid grid-cols-1 gap-6">
                             {[
                                 "Licensed, Bonded, and Insured",
                                 "Free Accurate On-Site Estimates",
@@ -95,32 +111,34 @@ export default async function CityPage({ params }: Props) {
                                 "Modern Stamped & Decorative Finishes",
                                 "Locally Owned & Operated Near You"
                             ].map((item, idx) => (
-                                <li key={idx} className="flex items-center space-x-3 text-slate-700 font-medium">
-                                    <svg className="w-6 h-6 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                                    </svg>
-                                    <span>{item}</span>
-                                </li>
+                                <div key={idx} className="flex items-center space-x-6 p-6 rounded-3xl bg-slate-900 border border-white/5 hover:border-primary/30 transition-all group">
+                                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all shadow-lg">
+                                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="4" d="M5 13l4 4L19 7" />
+                                        </svg>
+                                    </div>
+                                    <span className="text-white font-bold uppercase tracking-tight text-lg">{item}</span>
+                                </div>
                             ))}
-                        </ul>
+                        </div>
                     </div>
-                    <div className="bg-slate-100 rounded-3xl p-10 shadow-inner">
-                        <h3 className="text-2xl font-bold mb-4 italic text-primary">Serving the Heart of {cityName}</h3>
-                        <p className="text-slate-600 leading-relaxed mb-6">
-                            We have been the go-to concrete contractor in {cityName} for years,
+                    <div className="card-gradient p-16 relative overflow-hidden group border-white/5 bg-slate-900/40">
+                        <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-[100px] -z-10 transition-all group-hover:bg-primary/20" />
+                        <h3 className="text-3xl font-black mb-8 uppercase text-white tracking-tight italic">Serving {cityName} Families</h3>
+                        <p className="text-xl text-slate-400 leading-relaxed mb-12 font-light italic">
+                            "We have been the go-to concrete contractor in {cityName} for decades,
                             helping homeowners increase their property value with high-quality driveway installations.
-                            Whether you're near the city center or in the surrounding neighborhoods,
-                            our crew is ready to handle your concrete needs.
+                            Whether you're near the city center or in the hills, our crew is ready for you."
                         </p>
-                        <div className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
-                            <p className="font-bold text-slate-900 mb-2">Service Highlights:</p>
-                            <div className="grid grid-cols-2 gap-4 text-sm text-slate-500">
-                                <div>• Driveway Removal</div>
-                                <div>• Precise Grading</div>
-                                <div>• Rebar Reinforcement</div>
-                                <div>• Seal Coating</div>
-                                <div>• Stamped Patterns</div>
-                                <div>• Custom Colors</div>
+                        <div className="space-y-6">
+                            <p className="font-black text-primary text-sm uppercase tracking-[0.3em] border-b border-white/10 pb-4">Service Highlights</p>
+                            <div className="grid grid-cols-2 gap-6 text-sm text-white font-bold uppercase tracking-tighter">
+                                <div className="flex items-center space-x-3"><span className="w-2 h-2 bg-primary rounded-full shadow-[0_0_10px_#fb923c]" /><span>Driveway Removal</span></div>
+                                <div className="flex items-center space-x-3"><span className="w-2 h-2 bg-primary rounded-full shadow-[0_0_10px_#fb923c]" /><span>Precise Grading</span></div>
+                                <div className="flex items-center space-x-3"><span className="w-2 h-2 bg-primary rounded-full shadow-[0_0_10px_#fb923c]" /><span>Reinforcement</span></div>
+                                <div className="flex items-center space-x-3"><span className="w-2 h-2 bg-primary rounded-full shadow-[0_0_10px_#fb923c]" /><span>Seal Coating</span></div>
+                                <div className="flex items-center space-x-3"><span className="w-2 h-2 bg-primary rounded-full shadow-[0_0_10px_#fb923c]" /><span>Stamped Patterns</span></div>
+                                <div className="flex items-center space-x-3"><span className="w-2 h-2 bg-primary rounded-full shadow-[0_0_10px_#fb923c]" /><span>Custom Colors</span></div>
                             </div>
                         </div>
                     </div>
@@ -128,45 +146,43 @@ export default async function CityPage({ params }: Props) {
             </section>
 
             {/* Services Grid */}
-            <section className="w-full bg-slate-50 py-24">
-                <div className="section-container px-6">
-                    <h2 className="text-3xl font-bold text-center mb-16">Concrete Services We Offer in {cityName}</h2>
-                    <div className="grid md:grid-cols-3 gap-8">
-                        <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 transition-all hover:shadow-md">
-                            <div className="text-4xl mb-4">🏗️</div>
-                            <h3 className="text-xl font-bold mb-3">New Driveways</h3>
-                            <p className="text-slate-500">Full installation of high-strength concrete driveways designed for the specific needs of {cityName} homes.</p>
-                        </div>
-                        <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 transition-all hover:shadow-md">
-                            <div className="text-4xl mb-4">✨</div>
-                            <h3 className="text-xl font-bold mb-3">Stamped Concrete</h3>
-                            <p className="text-slate-500">Get the look of brick, stone, or slate with our premium decorative stamped concrete solutions.</p>
-                        </div>
-                        <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 transition-all hover:shadow-md">
-                            <div className="text-4xl mb-4">🧱</div>
-                            <h3 className="text-xl font-bold mb-3">Patio & Pavers</h3>
-                            <p className="text-slate-500">Extend your outdoor living space with custom concrete patios and beautiful paver walkways.</p>
-                        </div>
+            <section className="w-full bg-slate-900/30 py-32 border-y border-white/5">
+                <div className="section-container px-6 text-center">
+                    <h2 className="text-4xl md:text-6xl font-black text-white mb-20 uppercase tracking-tighter italic">{cityName} Concrete <span className="text-primary not-italic">Services</span></h2>
+                    <div className="grid md:grid-cols-3 gap-12">
+                        <ServiceItem icon="🏗️" title="New Driveways" desc={`Full installation of industrial-grade concrete driveways designed for the specific needs of ${cityName} homes.`} />
+                        <ServiceItem icon="✨" title="Stamped Concrete" desc="Premium decorative stamped solutions mimicking brick, stone, and slate with artisan textures." />
+                        <ServiceItem icon="🧱" title="Patio & Pavers" desc="Extend your outdoor living space with architectural concrete patios and luxury paver walkways." />
                     </div>
                 </div>
             </section>
 
             {/* CTA Section */}
-            <section className="section-container py-24 px-6 text-center">
-                <div className="bg-primary rounded-3xl p-12 text-white">
-                    <h2 className="text-4xl font-black mb-6">Ready to Start Your {cityName} Project?</h2>
-                    <p className="text-xl mb-10 opacity-90">Contact the #1 concrete contractor in {cityName} today for a free on-site consultation.</p>
-                    <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-                        <Link href="/contact" className="bg-white text-primary font-bold py-4 px-10 rounded-xl hover:bg-slate-100 transition-all shadow-xl">
-                            Get My Estimate
+            <section className="section-container py-32 px-6 text-center">
+                <div className="bg-primary rounded-[4rem] p-16 md:p-24 text-white shadow-[0_40px_80px_-15px_rgba(251,146,60,0.4)] relative overflow-hidden group">
+                    <div className="absolute -top-24 -right-24 w-96 h-96 bg-white/20 rounded-full blur-[120px] group-hover:scale-110 transition-transform duration-1000" />
+                    <h2 className="text-5xl md:text-8xl font-black mb-10 uppercase tracking-tighter leading-none italic">Ready to Upgrade <br />Your {cityName} Home?</h2>
+                    <p className="text-xl md:text-2xl mb-16 opacity-90 font-light max-w-3xl mx-auto italic leading-relaxed">Join hundreds of satisfied {cityName} homeowners. Get your professional, free on-site estimate today.</p>
+                    <div className="flex flex-col sm:flex-row gap-10 justify-center items-center">
+                        <Link href="/contact" className="bg-slate-950 text-white font-black py-6 px-14 rounded-[2rem] hover:scale-105 transition-all shadow-2xl text-2xl uppercase tracking-tighter">
+                            Get My Free Estimate
                         </Link>
-                        <span className="text-2xl font-bold">OR</span>
-                        <Link href="tel:9097872400" className="text-3xl font-black hover:underline underline-offset-8">
+                        <a href="tel:9097872400" className="text-4xl md:text-5xl font-black hover:text-slate-950 transition-all tracking-tighter italic underline decoration-4 decoration-slate-950/20 underline-offset-8">
                             (909) 787-2400
-                        </Link>
+                        </a>
                     </div>
                 </div>
             </section>
+        </div>
+    );
+}
+
+function ServiceItem({ icon, title, desc }: { icon: string; title: string, desc: string }) {
+    return (
+        <div className="bg-slate-900 p-12 rounded-[3.5rem] shadow-2xl border border-white/5 transition-all hover:border-primary/50 hover:-translate-y-4 group">
+            <div className="text-7xl mb-10 group-hover:scale-125 transition-transform duration-500 inline-block drop-shadow-2xl">{icon}</div>
+            <h3 className="text-2xl font-black mb-6 text-white uppercase tracking-tight italic">{title}</h3>
+            <p className="text-slate-500 leading-relaxed font-light text-lg">{desc}</p>
         </div>
     );
 }
